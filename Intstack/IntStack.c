@@ -74,3 +74,53 @@ void Terminate(IntStack* s) {
 	s->max = s->ptr = 0;
 }
 
+
+int main(void) {
+	IntStack s;
+	if (Initialize(&s, 64) == -1) {
+		puts("fail to make stack.");
+		return 1;
+	}
+
+	while (1) {
+		int menu, x;
+		printf("Now data number : %d / %d\n",Size(&s),Capacity(&s));
+		printf("1.Push 2.Pop 3.Peek 4.Print 0.End :  ");
+		scanf_s("%d", &menu);
+
+		if (menu == 0) break;
+		switch (menu) {
+		case 1: 
+			printf("Data is : ");
+			scanf_s("%d", &x);
+			if (Push(&s, x) == -1)
+				puts("\a Eroor : fail to push");
+			break;
+		case 2:
+
+			if (Pop(&s, &x) == -1)
+				puts("\a Error : fail to pop");
+			else
+				printf("Pop data is %d\n",x);
+			break;
+		case 3:
+			if (Peek(&s, &x) == -1)
+				puts("\a Error : fail to Peek");
+			else
+				printf("Peek data is %d\n", x);
+			break;
+		case 4:
+			Print(&s);
+			break;
+		}
+	}
+	Terminate(&s);
+	return 0;
+}
+
+
+
+
+
+
+
