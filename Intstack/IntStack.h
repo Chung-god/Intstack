@@ -14,27 +14,27 @@ typedef struct {
 
 
 /*Initialize stack*/
-int Initialize(IntStack* s, int max);
+int Initialize(IntStack* s1,IntStack *s2, int max);
 
 
 /*push data into stack */
-int Push(IntStack* s, int x);
+int Push(IntStack* s1, IntStack *s2, int x);
 
 
 /*pop data out stack*/
-int Pop(IntStack* s, int* x);
+int Pop(IntStack* s1, IntStack *s2, int* x);
 
 
 /*peek data in stack*/
-int Peek(const IntStack* s, int* x);
+int Peek(const IntStack* s1, IntStack *s2, int* x);
 
 
 /*Clear stack*/
-void Clear(IntStack *s);
+void Clear(IntStack * s1, IntStack *s2);
 
 
 /*stack's max capacity*/
-int Capacity(const IntStack* s);
+int Capacity(const IntStack* s1, IntStack *s2);
 
 
 /*stack's data size*/
@@ -50,14 +50,14 @@ int isFull(const IntStack* s);
 
 
 /*Search in stack*/
-int Search(const IntStack* s, int x);
+int Search(const IntStack* s1, IntStack *s2, int x);
 
 
 /*print all data*/
-void Print(const IntStack* s);
+void Print(const IntStack* s1, IntStack *s2);
 
 
 /*stack end*/
-void Terminate(IntStack* s);
+void Terminate(IntStack* s1, IntStack *s2);
 
 #endif // !___IntStack
