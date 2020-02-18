@@ -81,11 +81,12 @@ int main(void) {
 		puts("fail to make stack.");
 		return 1;
 	}
+	printf("Capacity is %d\n", Capacity(&s));
 
 	while (1) {
 		int menu, x;
 		printf("Now data number : %d / %d\n",Size(&s),Capacity(&s));
-		printf("1.Push 2.Pop 3.Peek 4.Print 0.End :  ");
+		printf("1.Push 2.Pop 3.Peek 4.Print 5.Search 6.Clear 0.End :  ");
 		scanf_s("%d", &menu);
 
 		if (menu == 0) break;
@@ -111,6 +112,18 @@ int main(void) {
 			break;
 		case 4:
 			Print(&s);
+			break;
+		case 5:
+			printf("Data is : ");
+			scanf_s("%d", &x);
+			if (Search(&s, x) == -1)
+				puts("\a Error : fail to search");
+			else
+				printf("Search data is array[%d]\n",Search(&s,x));
+			break;
+		case 6:
+			printf("Clear");
+			Clear(&s);
 			break;
 		}
 	}
